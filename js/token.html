@@ -4,6 +4,7 @@ time = new Date();
 etime = parseInt(time.getTime() / 1000) + 600;  // 授权10分钟后过期
 key = '';   // token防盗链密钥
 path = '';  // 文件相对路径
-str = hex_md5(key + '&' + etime + '&' + path);
+str = md5(key + '&' + etime + '&' + path);
 sign = str.substr(12, 8) + etime;
+alert(sign);
 </script>
