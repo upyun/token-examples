@@ -35,5 +35,14 @@ str = hex_md5(key + '&' + etime + '&' + path);
 sign = str.substr(12, 8) + etime;
 ```
 
+**Python 版**
+
+```
+etime = str(int(time.time()) + 600)  # 授权 10 分钟后过期
+key = ''                             # token 防盗链密钥
+path = ''                            # 文件相对路径
+sign = md5(key + '&' + etime + '&' + path)[12:20] + etime
+```
+
 填写 `key` `path` 直接运行即可。
 
